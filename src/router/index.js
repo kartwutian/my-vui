@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import Entry from '@/components/Entry'
+import Buttons from '@/components/Buttons'
 
 Vue.use(Router)
 
@@ -8,13 +9,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'entry',
+      component: Entry
     },
     {
-      path: '/',
-      name: 'Hello',
-      component: Hello
+      path: '/buttons',
+      name: 'buttons',
+      component: Buttons
     }
   ]
 })

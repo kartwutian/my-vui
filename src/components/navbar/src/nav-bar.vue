@@ -1,14 +1,14 @@
 <template>
-    <header class="m-navbar navbar-bottom-line-color" :class="classes" :style="{backgroundColor: bgcolor, height: height}">
-        <div class="navbar-item">
+    <header class="m-navbar navbar-bottom-line-color" :class="classes" :style="{backgroundColor: bgColor, height: height}">
+        <div class="navbar-item" @click="linkBack" >
             <slot name="left"></slot>
         </div>
         <div class="navbar-center-box" :style="{height: height}">
             <div class="navbar-center">
-                <slot name="center"><span class="center-title" :style="{color: color, fontSize: fontsize}">{{title}}</span></slot>
+                <slot name="center"><span class="center-title" :style="{color: color, fontSize: fontSize}">{{title}}</span></slot>
             </div>
         </div>
-        <div class="navbar-item">
+        <div class="navbar-item" @click="linkNext" >
             <slot name="right"></slot>
         </div>
     </header>
@@ -19,6 +19,18 @@
     import { mapState } from 'vuex'
     export default {
         name: 'v-nav-bar',
+        props: {
+            back:String,
+            next:String
+        },
+        methods: {
+          linkBack: function () {
+            this.$router.push({path: this.back})
+          },
+          linkNext: function () {
+            this.$router.push({path: this.next})
+          }
+        },
         computed: mapState({
             title: state => state.navbar.title || 'vui',
             color: state => state.navbar.color || '#5C5C5C',

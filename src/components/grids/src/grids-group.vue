@@ -15,7 +15,7 @@
                 return this.$store.state.grids.title || '';
             },
             classes() {
-                return 'm-grids-' + this.$store.state.grids.columns || '4';
+                return 'm-grids-' + this.$store.state.grids.columns || '3';
             }
         }
     }
