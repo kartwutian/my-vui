@@ -5,10 +5,12 @@ import App from './App'
 import fastclick from 'fastclick'
 import router from './router'
 import store from './store'
-import { flexible } from './utils/vui.flexible'
+import YDUI from '../ydui/ydui'
+import { flexible } from '../ydui/ydui.flexible'
 
 flexible()
 fastclick.attach(document.body)
+Vue.use(YDUI)
 
 Vue.config.productionTip = false
 
@@ -20,3 +22,23 @@ new Vue({
   template: '<App/>',
   components: {App}
 })
+
+let scrollTop = 0;
+
+router.beforeEach((route, redirect, next) => {
+  if (redirect.path === '/') {
+    scrollTop = document.getElementById('scrollView').scrollTop;
+  }
+  document.title = 'YDUI Touch - ' + route.name;
+  next();
+});
+
+router.afterEach(route => {
+  if (route.path === '/') {
+    Vue.nextTick(() => {
+      document.getElementById('scrollView').scrollTop = scrollTop;
+    });
+  } else {
+    document.getElementById('scrollView').scrollTop = 0;
+  }
+});

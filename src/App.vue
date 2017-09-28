@@ -1,7 +1,5 @@
 <template>
-  <div id="app" class="v-flexview">
     <router-view></router-view>
-  </div>
 </template>
 
 <script>
@@ -11,5 +9,6 @@
 </script>
 
 <style lang="less">
-  @import "styles/base.less";
+  @import "./styles/demo.less";
+  @import "../ydui/styles/base.less";
 </style>
