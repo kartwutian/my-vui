@@ -23,8 +23,7 @@
 </template>
 
 <script type="text/babel">
-//    import District from 'ydui-district/dist/jd_province_city_area_id';
-
+    import District from '../utils/district';
     export default {
         data() {
             return {
@@ -32,7 +31,7 @@
                 show2: false,
                 model1: '',
                 model2: '新疆 乌鲁木齐市 天山区',
-                district: ''/*District*/
+                district: District
             }
         },
         methods: {
