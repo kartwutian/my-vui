@@ -45,6 +45,7 @@ import LightBox from '@/components/lightbox';
 import TimeLine from '@/components/timeline';
 import Step from '@/components/step';
 import CheckList from '@/components/checklist';
+import Transition from '@/components/transition';
 
 Vue.use(Router)
 
@@ -92,5 +93,6 @@ export default new Router({
     {path: '/timeline', name: 'timeline', component: TimeLine},
     {path: '/step', name: 'step', component: Step},
     {path: '/checklist', name: 'checklist', component: CheckList},
+    {path: '/transition', name: 'transition', component: Transition},
   ]
 })
