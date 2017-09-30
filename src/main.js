@@ -7,6 +7,14 @@ import router from './router'
 import store from './store'
 import YDUI from '../ydui/ydui'
 import { flexible } from '../ydui/ydui.flexible'
+import axios from 'axios'
+
+
+Vue.use({
+  install: function (Vue) {
+    Vue.prototype.$axios = axios
+  }
+})
 
 flexible()
 fastclick.attach(document.body)
@@ -15,13 +23,15 @@ Vue.use(YDUI)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-new Vue({
+var myVue = new Vue({
   el: '#app',
   router,
   store,
   template: '<App/>',
   components: {App}
 })
+
+console.log(myVue)
 
 let scrollTop = 0;
 

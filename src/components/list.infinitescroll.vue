@@ -34,6 +34,7 @@
 </template>
 
 <script type="text/babel">
+    import jsonp from '../utils/jsonp'
     export default {
         data() {
             return {
@@ -93,14 +94,13 @@
         },
         methods: {
             loadList() {
-                this.$http.jsonp('http://list.ydui.org/getdata.php?type=backposition', {
-                    params: {
-                        page: this.page,
-                        pagesize: this.pageSize
-                    }
+                jsonp('http://list.ydui.org/getdata.php?type=backposition', {
+                  page: this.page,
+                  pagesize: this.pageSize
                 }).then(function (response) {
+                    console.log(response)
                     setTimeout(() => { // 请求太快了，延迟一下方便看效果！
-                        const _list = response.body;
+                        const _list = response;
 
                         this.list = [...this.list, ..._list];
 
@@ -115,7 +115,7 @@
 
                         this.page++;
                     }, 1000);
-                });
+                }.bind(this));
             }
         }
     }

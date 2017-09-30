@@ -29,6 +29,7 @@
 </template>
 
 <script type="text/babel">
+    import jsonp from '../utils/jsonp'
     export default {
         data() {
             return {
@@ -77,9 +78,9 @@
             loadList() {
                 const url = 'http://list.ydui.org/getdata.php';
 
-                this.$http.jsonp(url, {params: {type: 'pulldown', page: this.page}}).then((response) => {
+                jsonp(url, {type: 'pulldown', page: this.page}).then((response) => {
 
-                    const _list = response.body;
+                    const _list = response;
 
                     this.list = [..._list, ...this.list];
 
