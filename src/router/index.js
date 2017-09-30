@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+// 按需加载
+const CitySelect = r => require.ensure([], () => r(require('@/components/cityselect')), 'chunkname1');
 import Index from '@/components/index';
 import Button from '@/components/button';
 import Dialog from '@/components/dialog';
@@ -24,7 +26,7 @@ import ProgressBar from '@/components/progressbar';
 import KeyBoard from '@/components/keyboard';
 import Slider from '@/components/slider';
 import Spinner from '@/components/spinner';
-import CitySelect from '@/components/cityselect';
+// import CitySelect from '@/components/cityselect';
 import CountDown from '@/components/countdown';
 import Rate from '@/components/rate';
 import Popup from '@/components/popup';
