@@ -4,6 +4,8 @@ import {pageScroll} from '../../../../utils/assist';
 const AlertConstructor = Vue.extend(require('./alert.vue'));
 
 
+console.log(AlertConstructor)
+
 const instance = new AlertConstructor({
     el: document.createElement('div')
 });

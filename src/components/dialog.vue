@@ -28,6 +28,7 @@
     export default {
         methods: {
             openConfrim() {
+                console.log(this.$dialog.confirm)
                 this.$dialog.confirm({
                     title: '选填标题',
                     mes: '我有一个小毛驴我从来也不骑！',

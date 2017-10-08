@@ -4,7 +4,7 @@
         <h2 class="demo-detail-title">一只基于Vue2.x的移动端&微信UI。 -YDUI Touch</h2>
 
         <yd-grids-group rows="4">
-            <yd-grids-item v-for="item in list" :link="item.link">
+            <yd-grids-item v-for="item in list" :link="item.link" >
                 <i slot="icon" :class="item.icon"></i>
                 <span slot="text">{{item.name}}</span>
             </yd-grids-item>

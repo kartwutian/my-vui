@@ -106,6 +106,8 @@ const install = function (Vue) {
     Vue.component(CheckList.name, CheckList);
     Vue.component(CheckListItem.name, CheckListItem);
 
+    console.log(Confirm)
+
     Vue.prototype.$dialog = {
         confirm: Confirm,
         alert: Alert,

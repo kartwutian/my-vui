@@ -2,11 +2,10 @@ import Vue from 'vue';
 import {pageScroll} from '../../../../utils/assist';
 
 const ConfirmConstructor = Vue.extend(require('./confirm.vue'));
-
 const instance = new ConfirmConstructor({
     el: document.createElement('div')
 });
-
+console.log(instance)
 const hashChange = function () {
     pageScroll.unlock();
 

@@ -7,7 +7,7 @@
  */
 const Animate = require('./animate');
 
-var Scroller = function (component, content, options) {
+const Scroller = function (component, content, options) {
     var self = this;
 
     if (!component) return;
@@ -15,7 +15,7 @@ var Scroller = function (component, content, options) {
     options = options || {};
 
     self.options = {
-        onSelect () {
+        onSelect: function onSelect () {
         },
         itemHeight: 38
     };
@@ -57,7 +57,7 @@ var Scroller = function (component, content, options) {
     }, false);
 };
 
-var members = {
+const members = {
     value: null,
     __prevValue: null,
     __isSingleTouch: false,
@@ -496,8 +496,9 @@ var members = {
     }
 };
 
+// console.log(members)
 // Copy over members to prototype
-for (var key in members) {
+for (let key in members) {
     Scroller.prototype[key] = members[key]
 }
 
