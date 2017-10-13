@@ -1,6 +1,6 @@
 # my-vui
 
-> A Vue.js project
+> A Vue.js project 看 vue-demo，这个项目结构放弃
 
 ## Build Setup
 
